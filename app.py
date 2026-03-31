@@ -8,7 +8,9 @@ st.set_page_config(page_title="STYLÉ AI | Luxury", page_icon="✨", layout="wid
 # 2. AI SETUP (Yahan apni Key daalo)
 # Google AI Studio se key lo: https://aistudio.google.com/
 # Is line ko dhundo aur apni key yahan paste karo:
-genai.configure(api_key="AIzaSyBbmSj2V7_pFnrHs7P-n51JaIHDWS6iEDA")
+# Purani line: genai.configure(api_key="AIzaSy...") 
+# Nayi line ye likho:
+genai.configure(api_key=st.secrets["GEMINI_KEY"])
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 # --- LUXURY CSS (Wahi purana wala) ---
