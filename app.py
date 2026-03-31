@@ -54,7 +54,6 @@ st.markdown('<p style="text-align: center; color: #aaa; letter-spacing: 3px;">EL
 col1, col2 = st.columns([1, 1], gap="large")
 
 with col1:
-:
     st.markdown("### 📸 Upload Your Style")
     # Camera ki jagah File Uploader laga diya
     img_file_buffer = st.file_uploader("Gallery se photo select karein", type=['jpg', 'jpeg', 'png'])
@@ -62,20 +61,19 @@ with col1:
 with col2:
     st.markdown("### ✨ The Verdict")
     if img_file_buffer is not None:
+        # Baaki saara logic same rahega
         img = Image.open(img_file_buffer)
         st.image(img, use_container_width=True)
         
-        # --- AI LOGIC STARTS HERE ---
         with st.spinner("Analyzing your elegance..."):
             try:
-                # AI ko batana hai kya karna hai
                 prompt = "You are a luxury fashion expert. Analyze this outfit and give 3-4 lines of stylish advice in Hinglish. Be bold and elite."
+                # Gemini ko ab uploaded image jayegi
                 response = model.generate_content([prompt, img])
                 verdict_text = response.text
             except Exception as e:
-                verdict_text = "Bhai, API Key check karo ya internet! (Error: " + str(e) + ")"
+                verdict_text = f"Bhai, error aa gaya: {e}"
 
-        # Display Result
         st.markdown(f"""
             <div style="background: rgba(255,215,0,0.1); padding: 20px; border-radius: 15px; border-left: 5px solid #FFD700;">
                 <h4 style="color: #FFD700; margin: 0;">AI ANALYSIS COMPLETE</h4>
