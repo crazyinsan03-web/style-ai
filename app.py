@@ -11,7 +11,8 @@ st.set_page_config(page_title="STYLÉ AI | Luxury", page_icon="✨", layout="wid
 # Purani line: genai.configure(api_key="AIzaSy...") 
 # Nayi line ye likho:
 genai.configure(api_key=st.secrets["GEMINI_KEY"])
-model = genai.GenerativeModel('gemini-1.5-flash')
+# Purani line ko badal kar ye likho:
+model = genai.GenerativeModel('gemini-1.5-flash-latest')
 
 # --- LUXURY CSS (Wahi purana wala) ---
 st.markdown("""
