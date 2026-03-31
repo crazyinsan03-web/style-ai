@@ -10,8 +10,10 @@ st.set_page_config(page_title="STYLÉ AI | Luxury", page_icon="✨", layout="wid
 # Is line ko dhundo aur apni key yahan paste karo:
 # Purani line: genai.configure(api_key="AIzaSy...") 
 # Nayi line ye likho:
+# 2. AI SETUP
 genai.configure(api_key=st.secrets["GEMINI_KEY"])
-# Purani line ko badal kar ye likho:
+
+# 'gemini-1.5-flash-latest' use karein, ye v1beta aur v1 dono pe chalta hai
 model = genai.GenerativeModel('gemini-1.5-flash-latest')
 
 # --- LUXURY CSS (Wahi purana wala) ---
