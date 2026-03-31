@@ -54,8 +54,10 @@ st.markdown('<p style="text-align: center; color: #aaa; letter-spacing: 3px;">EL
 col1, col2 = st.columns([1, 1], gap="large")
 
 with col1:
-    st.markdown("### 📸 Visual Scan")
-    img_file_buffer = st.camera_input("")
+:
+    st.markdown("### 📸 Upload Your Style")
+    # Camera ki jagah File Uploader laga diya
+    img_file_buffer = st.file_uploader("Gallery se photo select karein", type=['jpg', 'jpeg', 'png'])
 
 with col2:
     st.markdown("### ✨ The Verdict")
