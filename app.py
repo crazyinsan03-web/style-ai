@@ -14,7 +14,8 @@ st.set_page_config(page_title="STYLÉ AI | Luxury", page_icon="✨", layout="wid
 genai.configure(api_key=st.secrets["GEMINI_KEY"])
 
 # 'gemini-1.5-flash-latest' use karein, ye v1beta aur v1 dono pe chalta hai
-model = genai.GenerativeModel('gemini-1.5-flash-latest')
+# Is line ko replace karein
+model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
 # --- LUXURY CSS (Wahi purana wala) ---
 st.markdown("""
