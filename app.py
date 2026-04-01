@@ -14,7 +14,7 @@ st.set_page_config(page_title="STYLÉ AI | Luxury", page_icon="✨", layout="wid
 genai.configure(api_key=st.secrets["GEMINI_KEY"])
 
 # Stable model name use karein
-model = genai.GenerativeModel('gemini-1.5-flash') 
+model = genai.GenerativeModel('gemini-pro-vision')
 
 # Analysis wala part (Jahan button click hota hai)
 def get_analysis(image):
