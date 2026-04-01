@@ -33,7 +33,8 @@ with col2:
             try:
                 # Using Llama 3.2 Vision (Super Fast & Accurate)
                 completion = client.chat.completions.create(
-                    model="llama-3.2-11b-vision-preview",
+                   # Purana model hata kar ye naya wala dalo
+model="llama-3.2-90b-vision-preview"
                     messages=[
                         {
                             "role": "user",
