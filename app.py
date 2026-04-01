@@ -11,11 +11,20 @@ st.set_page_config(page_title="STYLÉ AI | Luxury", page_icon="✨", layout="wid
 # Purani line: genai.configure(api_key="AIzaSy...") 
 # Nayi line ye likho:
 # --- AI SETUP ---
-# Is line ko check karo, secrets se key uthani hai
 genai.configure(api_key=st.secrets["GEMINI_KEY"])
 
-# Model name ekdum simple rakho, bina 'models/' ya 'latest' ke
-model = genai.GenerativeModel('gemini-1.5-flash')
+# Stable model name use karein
+model = genai.GenerativeModel('gemini-1.5-flash') 
+
+# Analysis wala part (Jahan button click hota hai)
+def get_analysis(image):
+    try:
+        prompt = "You are a luxury fashion expert. Analyze this outfit and give 3-4 lines of stylish advice in Hinglish. Be bold and elite."
+        response = model.generate_content([prompt, image])
+        return response.text
+    except Exception as e:
+        # Agar flash nahi chala toh purana pro try karega
+        return f"Oye hoye! Error aa gaya: {e}"
 
 # --- LUXURY CSS (Wahi purana wala) ---
 st.markdown("""
